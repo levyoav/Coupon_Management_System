@@ -1,0 +1,1797 @@
+*****************
+AdminFacade test:
+*****************
+
+Test of login method:
+
+COMMAND: (AdminFacade)cms.login("21dd", "1234", ClientType.ADMIN);
+
+RESULT:
+ERROR: Administrator with the user name: '21dd' does not exist.
+
+COMMAND: (AdminFacade)cms.login("admin", "1232", ClientType.ADMIN);
+
+RESULT:
+ERROR: Incorrect password for administrator 'admin'. Please try again.
+
+COMMAND: (AdminFacade)cms.login("admin", "1234", ClientType.ADMIN);
+
+RESULT:
+
+Test of get company methods:
+
+Shwoing the content of 'Company_Table':
+------------------------Company_Table-----------------------------------------
+------------------------------------------------------------------------------------------
+|ID                 |Company_Name       |Password           |Email              |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |Teva               |1234               |teva@mail.com      |
+|2                  |Apple              |abcd               |apple@mail.com     |
+|3                  |Google             |0000               |google@gamil.com   |
+|4                  |Intel              |ck39f              |intel@mail.com     |
+-----------------------------------------END OF Company_Table----------------------------------------------
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|2                  |Discount           |2015-11-26         |2016-11-26         |0                  |CAMPING            |Tell a friend      |100.0              |image.jpg          |
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |94                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Free               |2015-10-01         |2016-10-01         |16                 |RESTAURANTS        |Thank you for buyin|200.0              |http//:facebook.com|
+|7                  |Spa                |2015-10-01         |2016-10-01         |14                 |TRAVELLING         |50% off!           |100.0              |image.jpg          |
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|9                  |Buy 1 get 1 free   |2015-03-01         |2016-03-01         |0                  |CAMPING            |Come all           |100.0              |picture            |
+|10                 |Shopping           |2015-08-01         |2016-08-01         |31                 |FOOD               |Open all week      |250.0              |tmona              |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Company_Coupon_Table':
+-----------------------------------------Company_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Company_ID         |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |2                  |
+|1                  |7                  |
+|1                  |10                 |
+|2                  |6                  |
+|2                  |9                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|3                  |8                  |
+|4                  |1                  |
+|4                  |4                  |
+|4                  |12                 |
+-----------------------------------------END OF Company_Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Customer_Coupon_Table':
+-----------------------------------------Customer_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Customer_ID        |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |2                  |
+|1                  |7                  |
+|1                  |9                  |
+|1                  |10                 |
+|1                  |12                 |
+|2                  |1                  |
+|2                  |3                  |
+|2                  |4                  |
+|2                  |7                  |
+|2                  |11                 |
+|3                  |2                  |
+|3                  |3                  |
+|3                  |5                  |
+|3                  |9                  |
+|3                  |10                 |
+|4                  |1                  |
+|4                  |2                  |
+|4                  |7                  |
+|4                  |8                  |
+|4                  |10                 |
+|5                  |2                  |
+|5                  |4                  |
+|5                  |8                  |
+|5                  |11                 |
+|5                  |12                 |
+|6                  |2                  |
+|6                  |3                  |
+|6                  |10                 |
+|6                  |11                 |
+|7                  |8                  |
+|7                  |9                  |
+|7                  |10                 |
+|7                  |11                 |
+|7                  |12                 |
+|8                  |1                  |
+|8                  |2                  |
+|8                  |5                  |
+|8                  |9                  |
+|8                  |10                 |
+|9                  |1                  |
+|9                  |2                  |
+|9                  |4                  |
+|9                  |9                  |
+|10                 |1                  |
+|10                 |5                  |
+|10                 |6                  |
+|11                 |1                  |
+|11                 |5                  |
+|11                 |10                 |
+|11                 |11                 |
+|12                 |1                  |
+|12                 |2                  |
+|12                 |11                 |
+|12                 |12                 |
+|13                 |1                  |
+|13                 |4                  |
+|13                 |5                  |
+|13                 |8                  |
+|13                 |10                 |
+|14                 |1                  |
+|14                 |6                  |
+|14                 |7                  |
+|14                 |12                 |
+|15                 |1                  |
+|15                 |5                  |
+|15                 |6                  |
+|15                 |12                 |
+|16                 |2                  |
+|16                 |4                  |
+|16                 |7                  |
+|16                 |8                  |
+|16                 |11                 |
+|17                 |1                  |
+|17                 |2                  |
+|18                 |5                  |
+|18                 |6                  |
+|18                 |8                  |
+|19                 |4                  |
+|19                 |5                  |
+|19                 |10                 |
+|19                 |11                 |
+|20                 |5                  |
+|20                 |7                  |
+|20                 |11                 |
+|20                 |12                 |
+-----------------------------------------END OF Customer_Coupon_Table----------------------------------------------
+
+COMMAND: admnFcd.getCompany(-1);
+
+RESULT:
+ERROR: Invalid company ID value : -1 . Please enter a value greater than 0.
+
+COMMAND: admnFcd.getCompany(0);
+
+RESULT:
+ERROR: Invalid company ID value : 0 . Please enter a value greater than 0.
+
+COMMAND: admnFcd.getCompany(6);
+
+RESULT:
+ERROR: No company with the ID: 6 was found in table 'Company_Table'.
+
+COMMAND: admnFcd.getCompany(3);
+
+RESULT:
+Result:
+Company [id=3, compName=Google, password=0000, email=google@gamil.com, coupons=[Coupon [id=8, title=2 for 1, startDate=2015-10-01, endDate=2016-10-01, amount=24, type=ELECTRICITY, message=Visit our website, price=50.0, image=Photo], Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]]]
+
+COMMAND: admnFcd.getAllCompanies();
+
+RESULT:
+Company [id=4, compName=Intel, password=ck39f, email=intel@mail.com, coupons=[Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com], Coupon [id=4, title=SuperPharm, startDate=2015-10-10, endDate=2016-10-10, amount=94, type=SPORTS, message=Hello, price=100.0, image=picture], Coupon [id=12, title=Free entrance, startDate=2015-01-01, endDate=2016-01-01, amount=193, type=HEALTH, message=Free parking, price=120.0, image=snapshot]]]
+Company [id=2, compName=Apple, password=abcd, email=apple@mail.com, coupons=[Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture], Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla], Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]]]
+Company [id=3, compName=Google, password=0000, email=google@gamil.com, coupons=[Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=8, title=2 for 1, startDate=2015-10-01, endDate=2016-10-01, amount=24, type=ELECTRICITY, message=Visit our website, price=50.0, image=Photo], Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]]]
+Company [id=1, compName=Teva, password=1234, email=teva@mail.com, coupons=[Coupon [id=10, title=Shopping, startDate=2015-08-01, endDate=2016-08-01, amount=31, type=FOOD, message=Open all week, price=250.0, image=tmona], Coupon [id=2, title=Discount, startDate=2015-11-26, endDate=2016-11-26, amount=0, type=CAMPING, message=Tell a friend, price=100.0, image=image.jpg], Coupon [id=7, title=Spa, startDate=2015-10-01, endDate=2016-10-01, amount=14, type=TRAVELLING, message=50% off!, price=100.0, image=image.jpg]]]
+
+Test of remove company methods:
+
+COMMAND: admnFcd.removeCompany(admnFcd.getCompany(1));
+
+RESULT:
+
+Shwoing the content of 'Company_Table':
+------------------------Company_Table-----------------------------------------
+------------------------------------------------------------------------------------------
+|ID                 |Company_Name       |Password           |Email              |
+-----------------------------------------------------------------------------------------------------------------
+|2                  |Apple              |abcd               |apple@mail.com     |
+|3                  |Google             |0000               |google@gamil.com   |
+|4                  |Intel              |ck39f              |intel@mail.com     |
+-----------------------------------------END OF Company_Table----------------------------------------------
+
+Shwoing the content of 'Company_Coupon_Table':
+-----------------------------------------Company_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Company_ID         |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|2                  |6                  |
+|2                  |9                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|3                  |8                  |
+|4                  |1                  |
+|4                  |4                  |
+|4                  |12                 |
+-----------------------------------------END OF Company_Coupon_Table----------------------------------------------
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |94                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Free               |2015-10-01         |2016-10-01         |16                 |RESTAURANTS        |Thank you for buyin|200.0              |http//:facebook.com|
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|9                  |Buy 1 get 1 free   |2015-03-01         |2016-03-01         |0                  |CAMPING            |Come all           |100.0              |picture            |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Customer_Coupon_Table':
+-----------------------------------------Customer_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Customer_ID        |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |9                  |
+|1                  |12                 |
+|2                  |1                  |
+|2                  |3                  |
+|2                  |4                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|3                  |9                  |
+|4                  |1                  |
+|4                  |8                  |
+|5                  |4                  |
+|5                  |8                  |
+|5                  |11                 |
+|5                  |12                 |
+|6                  |3                  |
+|6                  |11                 |
+|7                  |8                  |
+|7                  |9                  |
+|7                  |11                 |
+|7                  |12                 |
+|8                  |1                  |
+|8                  |5                  |
+|8                  |9                  |
+|9                  |1                  |
+|9                  |4                  |
+|9                  |9                  |
+|10                 |1                  |
+|10                 |5                  |
+|10                 |6                  |
+|11                 |1                  |
+|11                 |5                  |
+|11                 |11                 |
+|12                 |1                  |
+|12                 |11                 |
+|12                 |12                 |
+|13                 |1                  |
+|13                 |4                  |
+|13                 |5                  |
+|13                 |8                  |
+|14                 |1                  |
+|14                 |6                  |
+|14                 |12                 |
+|15                 |1                  |
+|15                 |5                  |
+|15                 |6                  |
+|15                 |12                 |
+|16                 |4                  |
+|16                 |8                  |
+|16                 |11                 |
+|17                 |1                  |
+|18                 |5                  |
+|18                 |6                  |
+|18                 |8                  |
+|19                 |4                  |
+|19                 |5                  |
+|19                 |11                 |
+|20                 |5                  |
+|20                 |11                 |
+|20                 |12                 |
+-----------------------------------------END OF Customer_Coupon_Table----------------------------------------------
+
+COMMAND: admnFcd.removeCompany(admnFcd.getCompany(1));
+
+RESULT:
+ERROR: No company with the ID: 1 was found in table 'Company_Table'.
+
+Test of update company methods:
+
+COMMAND: 
+cmpny = admnFcd.getCompany(2);
+cmpny.setId(3);
+cmpny.setCompName("HP");
+cmpny.setEmail("google@gamil.com");
+cmpny.setPassword("jobs");
+admnFcd.updateCompany(cmpny);
+
+RESULT:
+ERROR: The Email address 'google@gamil.com' is already listed for another company in the data base. Please enter a different Email address.
+
+COMMAND: 
+cmpny = admnFcd.getCompany(2);
+cmpny.setId(3);
+cmpny.setCompName("HP");
+cmpny.setEmail("apple@apple.com");
+cmpny.setPassword("jobs");
+admnFcd.updateCompany(cmpny);
+
+RESULT:
+
+Shwoing the content of 'Company_Table':
+------------------------Company_Table-----------------------------------------
+------------------------------------------------------------------------------------------
+|ID                 |Company_Name       |Password           |Email              |
+-----------------------------------------------------------------------------------------------------------------
+|2                  |Apple              |jobs               |apple@apple.com    |
+|3                  |Google             |0000               |google@gamil.com   |
+|4                  |Intel              |ck39f              |intel@mail.com     |
+-----------------------------------------END OF Company_Table----------------------------------------------
+
+Test of create company methods:
+
+COMMAND: 
+cmpny = null;
+admnFcd.createCompany(cmpny);
+
+RESULT:
+ERROR: Invalid company. Please try again.
+
+COMMAND: 
+cmpny = new Company("google", "14334", "google@gamil.com");
+admnFcd.createCompany(cmpny);
+
+RESULT:
+ERROR: A company with the name 'Google' already exists in the data base. Please enter a company with a different name.
+
+COMMAND: 
+cmpny = new Company("Facebook", "14334", "google@gamil.com");
+admnFcd.createCompany(cmpny);
+
+RESULT:
+ERROR: The Email address 'google@gamil.com' is already listed for another company in the data base. Please enter a different Email address.
+
+COMMAND: 
+cmpny = new Company("Facebook", "14334", "facebook@fb.com");
+admnFcd.createCompany(cmpny);
+
+RESULT:
+
+Shwoing the content of 'Company_Table':
+------------------------Company_Table-----------------------------------------
+------------------------------------------------------------------------------------------
+|ID                 |Company_Name       |Password           |Email              |
+-----------------------------------------------------------------------------------------------------------------
+|2                  |Apple              |jobs               |apple@apple.com    |
+|3                  |Google             |0000               |google@gamil.com   |
+|4                  |Intel              |ck39f              |intel@mail.com     |
+|5                  |Facebook           |14334              |facebook@fb.com    |
+-----------------------------------------END OF Company_Table----------------------------------------------
+
+Test of get customer methods:
+
+Shwoing the content of 'Customer_Table':
+-----------------------------------------Customer_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|ID                 |Customer_Name      |Password           |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |Yossi              |vdfas              |
+|2                  |Eli                |45tgw              |
+|3                  |Avi                |43erg              |
+|4                  |Moshe              |jydgd              |
+|5                  |Beny               |abcd               |
+|6                  |Yoav               |vbgtj              |
+|7                  |David              |sdfraj             |
+|8                  |Asi                |feauh              |
+|9                  |Tal                |83fhv              |
+|10                 |Itik               |askdv              |
+|11                 |Yaniv              |nvfjdw             |
+|12                 |Ami                |freerf             |
+|13                 |Eldad              |efaaa              |
+|14                 |Baruch             |3fj2               |
+|15                 |Zion               |4gf43q             |
+|16                 |Dan                |cvdsf              |
+|17                 |Hagar              |39vje              |
+|18                 |Hila               |3aouv              |
+|19                 |Yaron              |3fahha             |
+|20                 |Meital             |3aw3ha             |
+-----------------------------------------END OF Customer_Table----------------------------------------------
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |94                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Free               |2015-10-01         |2016-10-01         |16                 |RESTAURANTS        |Thank you for buyin|200.0              |http//:facebook.com|
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|9                  |Buy 1 get 1 free   |2015-03-01         |2016-03-01         |0                  |CAMPING            |Come all           |100.0              |picture            |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Customer_Coupon_Table':
+-----------------------------------------Customer_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Customer_ID        |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |9                  |
+|1                  |12                 |
+|2                  |1                  |
+|2                  |3                  |
+|2                  |4                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|3                  |9                  |
+|4                  |1                  |
+|4                  |8                  |
+|5                  |4                  |
+|5                  |8                  |
+|5                  |11                 |
+|5                  |12                 |
+|6                  |3                  |
+|6                  |11                 |
+|7                  |8                  |
+|7                  |9                  |
+|7                  |11                 |
+|7                  |12                 |
+|8                  |1                  |
+|8                  |5                  |
+|8                  |9                  |
+|9                  |1                  |
+|9                  |4                  |
+|9                  |9                  |
+|10                 |1                  |
+|10                 |5                  |
+|10                 |6                  |
+|11                 |1                  |
+|11                 |5                  |
+|11                 |11                 |
+|12                 |1                  |
+|12                 |11                 |
+|12                 |12                 |
+|13                 |1                  |
+|13                 |4                  |
+|13                 |5                  |
+|13                 |8                  |
+|14                 |1                  |
+|14                 |6                  |
+|14                 |12                 |
+|15                 |1                  |
+|15                 |5                  |
+|15                 |6                  |
+|15                 |12                 |
+|16                 |4                  |
+|16                 |8                  |
+|16                 |11                 |
+|17                 |1                  |
+|18                 |5                  |
+|18                 |6                  |
+|18                 |8                  |
+|19                 |4                  |
+|19                 |5                  |
+|19                 |11                 |
+|20                 |5                  |
+|20                 |11                 |
+|20                 |12                 |
+-----------------------------------------END OF Customer_Coupon_Table----------------------------------------------
+
+COMMAND: 
+cstmr = admnFcd.getCustomer(-1);
+
+RESULT:
+ERROR: Invalid customer ID value : -1 . Please enter a value greater than 0.
+
+COMMAND: 
+cstmr = admnFcd.getCustomer(0);
+
+RESULT:
+ERROR: Invalid customer ID value : 0 . Please enter a value greater than 0.
+
+COMMAND: 
+cstmr = admnFcd.getCustomer(30);
+
+RESULT:
+ERROR: No matching customer with the ID: 30 was found in table 'Customer_Table'.
+
+COMMAND: 
+cstmr = admnFcd.getCustomer(1);
+
+RESULT:
+Customer [id=1, custName=Yossi, password=vdfas, coupons=[Coupon [id=12, title=Free entrance, startDate=2015-01-01, endDate=2016-01-01, amount=193, type=HEALTH, message=Free parking, price=120.0, image=snapshot], Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]]]
+
+COMMAND: 
+admnFcd.getAllCustomers();
+
+RESULT:
+Customer [id=15, custName=Zion, password=4gf43q, coupons=[Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com], Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com], Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=12, title=Free entrance, startDate=2015-01-01, endDate=2016-01-01, amount=193, type=HEALTH, message=Free parking, price=120.0, image=snapshot]]]
+Customer [id=6, custName=Yoav, password=vbgtj, coupons=[Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo], Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]]]
+Customer [id=10, custName=Itik, password=askdv, coupons=[Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com], Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]]]
+Customer [id=11, custName=Yaniv, password=nvfjdw, coupons=[Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com], Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla], Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]]]
+Customer [id=12, custName=Ami, password=freerf, coupons=[Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla], Coupon [id=12, title=Free entrance, startDate=2015-01-01, endDate=2016-01-01, amount=193, type=HEALTH, message=Free parking, price=120.0, image=snapshot], Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com]]]
+Customer [id=17, custName=Hagar, password=39vje, coupons=[Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com]]]
+Customer [id=18, custName=Hila, password=3aouv, coupons=[Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=8, title=2 for 1, startDate=2015-10-01, endDate=2016-10-01, amount=24, type=ELECTRICITY, message=Visit our website, price=50.0, image=Photo], Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]]]
+Customer [id=5, custName=Beny, password=abcd, coupons=[Coupon [id=4, title=SuperPharm, startDate=2015-10-10, endDate=2016-10-10, amount=94, type=SPORTS, message=Hello, price=100.0, image=picture], Coupon [id=8, title=2 for 1, startDate=2015-10-01, endDate=2016-10-01, amount=24, type=ELECTRICITY, message=Visit our website, price=50.0, image=Photo], Coupon [id=12, title=Free entrance, startDate=2015-01-01, endDate=2016-01-01, amount=193, type=HEALTH, message=Free parking, price=120.0, image=snapshot], Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]]]
+Customer [id=16, custName=Dan, password=cvdsf, coupons=[Coupon [id=4, title=SuperPharm, startDate=2015-10-10, endDate=2016-10-10, amount=94, type=SPORTS, message=Hello, price=100.0, image=picture], Coupon [id=8, title=2 for 1, startDate=2015-10-01, endDate=2016-10-01, amount=24, type=ELECTRICITY, message=Visit our website, price=50.0, image=Photo], Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]]]
+Customer [id=20, custName=Meital, password=3aw3ha, coupons=[Coupon [id=12, title=Free entrance, startDate=2015-01-01, endDate=2016-01-01, amount=193, type=HEALTH, message=Free parking, price=120.0, image=snapshot], Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]]]
+Customer [id=19, custName=Yaron, password=3fahha, coupons=[Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla], Coupon [id=4, title=SuperPharm, startDate=2015-10-10, endDate=2016-10-10, amount=94, type=SPORTS, message=Hello, price=100.0, image=picture]]]
+Customer [id=8, custName=Asi, password=feauh, coupons=[Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com], Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]]]
+Customer [id=3, custName=Avi, password=43erg, coupons=[Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo], Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]]]
+Customer [id=4, custName=Moshe, password=jydgd, coupons=[Coupon [id=8, title=2 for 1, startDate=2015-10-01, endDate=2016-10-01, amount=24, type=ELECTRICITY, message=Visit our website, price=50.0, image=Photo], Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com]]]
+Customer [id=7, custName=David, password=sdfraj, coupons=[Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla], Coupon [id=8, title=2 for 1, startDate=2015-10-01, endDate=2016-10-01, amount=24, type=ELECTRICITY, message=Visit our website, price=50.0, image=Photo], Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture], Coupon [id=12, title=Free entrance, startDate=2015-01-01, endDate=2016-01-01, amount=193, type=HEALTH, message=Free parking, price=120.0, image=snapshot]]]
+Customer [id=2, custName=Eli, password=45tgw, coupons=[Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla], Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo], Coupon [id=4, title=SuperPharm, startDate=2015-10-10, endDate=2016-10-10, amount=94, type=SPORTS, message=Hello, price=100.0, image=picture], Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com]]]
+Customer [id=9, custName=Tal, password=83fhv, coupons=[Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com], Coupon [id=4, title=SuperPharm, startDate=2015-10-10, endDate=2016-10-10, amount=94, type=SPORTS, message=Hello, price=100.0, image=picture], Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]]]
+Customer [id=14, custName=Baruch, password=3fj2, coupons=[Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com], Coupon [id=12, title=Free entrance, startDate=2015-01-01, endDate=2016-01-01, amount=193, type=HEALTH, message=Free parking, price=120.0, image=snapshot], Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]]]
+Customer [id=1, custName=Yossi, password=vdfas, coupons=[Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture], Coupon [id=12, title=Free entrance, startDate=2015-01-01, endDate=2016-01-01, amount=193, type=HEALTH, message=Free parking, price=120.0, image=snapshot]]]
+Customer [id=13, custName=Eldad, password=efaaa, coupons=[Coupon [id=8, title=2 for 1, startDate=2015-10-01, endDate=2016-10-01, amount=24, type=ELECTRICITY, message=Visit our website, price=50.0, image=Photo], Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona], Coupon [id=1, title=Groupon, startDate=2015-10-21, endDate=2016-10-21, amount=9, type=ELECTRICITY, message=All half price!, price=200.0, image=http//:facebook.com], Coupon [id=4, title=SuperPharm, startDate=2015-10-10, endDate=2016-10-10, amount=94, type=SPORTS, message=Hello, price=100.0, image=picture]]]
+
+Test of remove customer methods:
+
+COMMAND: 
+admnFcd.removeCustomer(admnFcd.getCustomer(4));
+
+RESULT:
+
+Shwoing the content of 'Customer_Table':
+-----------------------------------------Customer_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|ID                 |Customer_Name      |Password           |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |Yossi              |vdfas              |
+|2                  |Eli                |45tgw              |
+|3                  |Avi                |43erg              |
+|5                  |Beny               |abcd               |
+|6                  |Yoav               |vbgtj              |
+|7                  |David              |sdfraj             |
+|8                  |Asi                |feauh              |
+|9                  |Tal                |83fhv              |
+|10                 |Itik               |askdv              |
+|11                 |Yaniv              |nvfjdw             |
+|12                 |Ami                |freerf             |
+|13                 |Eldad              |efaaa              |
+|14                 |Baruch             |3fj2               |
+|15                 |Zion               |4gf43q             |
+|16                 |Dan                |cvdsf              |
+|17                 |Hagar              |39vje              |
+|18                 |Hila               |3aouv              |
+|19                 |Yaron              |3fahha             |
+|20                 |Meital             |3aw3ha             |
+-----------------------------------------END OF Customer_Table----------------------------------------------
+
+Shwoing the content of 'Customer_Coupon_Table':
+-----------------------------------------Customer_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Customer_ID        |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |9                  |
+|1                  |12                 |
+|2                  |1                  |
+|2                  |3                  |
+|2                  |4                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|3                  |9                  |
+|5                  |4                  |
+|5                  |8                  |
+|5                  |11                 |
+|5                  |12                 |
+|6                  |3                  |
+|6                  |11                 |
+|7                  |8                  |
+|7                  |9                  |
+|7                  |11                 |
+|7                  |12                 |
+|8                  |1                  |
+|8                  |5                  |
+|8                  |9                  |
+|9                  |1                  |
+|9                  |4                  |
+|9                  |9                  |
+|10                 |1                  |
+|10                 |5                  |
+|10                 |6                  |
+|11                 |1                  |
+|11                 |5                  |
+|11                 |11                 |
+|12                 |1                  |
+|12                 |11                 |
+|12                 |12                 |
+|13                 |1                  |
+|13                 |4                  |
+|13                 |5                  |
+|13                 |8                  |
+|14                 |1                  |
+|14                 |6                  |
+|14                 |12                 |
+|15                 |1                  |
+|15                 |5                  |
+|15                 |6                  |
+|15                 |12                 |
+|16                 |4                  |
+|16                 |8                  |
+|16                 |11                 |
+|17                 |1                  |
+|18                 |5                  |
+|18                 |6                  |
+|18                 |8                  |
+|19                 |4                  |
+|19                 |5                  |
+|19                 |11                 |
+|20                 |5                  |
+|20                 |11                 |
+|20                 |12                 |
+-----------------------------------------END OF Customer_Coupon_Table----------------------------------------------
+
+COMMAND: 
+admnFcd.removeCustomer(admnFcd.getCustomer(4));
+
+RESULT:
+ERROR: No matching customer with the ID: 4 was found in table 'Customer_Table'.
+
+Test of update customer methods:
+
+Shwoing the content of 'Customer_Table':
+-----------------------------------------Customer_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|ID                 |Customer_Name      |Password           |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |Yossi              |vdfas              |
+|2                  |Eli                |45tgw              |
+|3                  |Avi                |43erg              |
+|5                  |Beny               |abcd               |
+|6                  |Yoav               |vbgtj              |
+|7                  |David              |sdfraj             |
+|8                  |Asi                |feauh              |
+|9                  |Tal                |83fhv              |
+|10                 |Itik               |askdv              |
+|11                 |Yaniv              |nvfjdw             |
+|12                 |Ami                |freerf             |
+|13                 |Eldad              |efaaa              |
+|14                 |Baruch             |3fj2               |
+|15                 |Zion               |4gf43q             |
+|16                 |Dan                |cvdsf              |
+|17                 |Hagar              |39vje              |
+|18                 |Hila               |3aouv              |
+|19                 |Yaron              |3fahha             |
+|20                 |Meital             |3aw3ha             |
+-----------------------------------------END OF Customer_Table----------------------------------------------
+
+COMMAND: 
+cstmr = admnFcd.getCustomer(3);
+cstmr.setId(9);
+cstmr.setCustName("Felix");
+cstmr.setPassword("1234");
+
+RESULT:
+
+Shwoing the content of 'Customer_Table':
+-----------------------------------------Customer_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|ID                 |Customer_Name      |Password           |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |Yossi              |vdfas              |
+|2                  |Eli                |45tgw              |
+|3                  |Avi                |1234               |
+|5                  |Beny               |abcd               |
+|6                  |Yoav               |vbgtj              |
+|7                  |David              |sdfraj             |
+|8                  |Asi                |feauh              |
+|9                  |Tal                |83fhv              |
+|10                 |Itik               |askdv              |
+|11                 |Yaniv              |nvfjdw             |
+|12                 |Ami                |freerf             |
+|13                 |Eldad              |efaaa              |
+|14                 |Baruch             |3fj2               |
+|15                 |Zion               |4gf43q             |
+|16                 |Dan                |cvdsf              |
+|17                 |Hagar              |39vje              |
+|18                 |Hila               |3aouv              |
+|19                 |Yaron              |3fahha             |
+|20                 |Meital             |3aw3ha             |
+-----------------------------------------END OF Customer_Table----------------------------------------------
+
+Test of create customer methods:
+
+COMMAND: 
+cstmr = null;
+admnFcd.createCustomer(cstmr);
+
+RESULT:
+ERROR: Invalid customer. Please try again.
+
+COMMAND: 
+cstmr = new Customer("Ami", "4234gfr");
+admnFcd.createCustomer(cstmr);
+
+RESULT:
+ERROR: The user name 'Ami' already exists for another customer in the data base. Please enter a different user name.
+
+COMMAND: 
+cstmr = new Customer("Udi", "4234gfr");
+admnFcd.createCustomer(cstmr);
+
+RESULT:
+
+Shwoing the content of 'Customer_Table':
+-----------------------------------------Customer_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|ID                 |Customer_Name      |Password           |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |Yossi              |vdfas              |
+|2                  |Eli                |45tgw              |
+|3                  |Avi                |1234               |
+|5                  |Beny               |abcd               |
+|6                  |Yoav               |vbgtj              |
+|7                  |David              |sdfraj             |
+|8                  |Asi                |feauh              |
+|9                  |Tal                |83fhv              |
+|10                 |Itik               |askdv              |
+|11                 |Yaniv              |nvfjdw             |
+|12                 |Ami                |freerf             |
+|13                 |Eldad              |efaaa              |
+|14                 |Baruch             |3fj2               |
+|15                 |Zion               |4gf43q             |
+|16                 |Dan                |cvdsf              |
+|17                 |Hagar              |39vje              |
+|18                 |Hila               |3aouv              |
+|19                 |Yaron              |3fahha             |
+|20                 |Meital             |3aw3ha             |
+|21                 |Udi                |4234gfr            |
+-----------------------------------------END OF Customer_Table----------------------------------------------
+
+*******************
+CompanyFacade test:
+*******************
+
+Test of login method:
+
+Shwoing the content of 'Company_Table':
+------------------------Company_Table-----------------------------------------
+------------------------------------------------------------------------------------------
+|ID                 |Company_Name       |Password           |Email              |
+-----------------------------------------------------------------------------------------------------------------
+|2                  |Apple              |jobs               |apple@apple.com    |
+|3                  |Google             |0000               |google@gamil.com   |
+|4                  |Intel              |ck39f              |intel@mail.com     |
+|5                  |Facebook           |14334              |facebook@fb.com    |
+-----------------------------------------END OF Company_Table----------------------------------------------
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |94                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Free               |2015-10-01         |2016-10-01         |16                 |RESTAURANTS        |Thank you for buyin|200.0              |http//:facebook.com|
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|9                  |Buy 1 get 1 free   |2015-03-01         |2016-03-01         |0                  |CAMPING            |Come all           |100.0              |picture            |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Company_Coupon_Table':
+-----------------------------------------Company_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Company_ID         |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|2                  |6                  |
+|2                  |9                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|3                  |8                  |
+|4                  |1                  |
+|4                  |4                  |
+|4                  |12                 |
+-----------------------------------------END OF Company_Coupon_Table----------------------------------------------
+
+COMMAND: 
+cmpnyFcd = (CompanyFacade)cms.login("21dd", "1234", ClientType.COMPANY);
+
+RESULT:
+ERROR: No companies with the name '21dd' in table 'Company_Table'.
+
+COMMAND: 
+cmpnyFcd = (CompanyFacade)cms.login("Apple", "1234", ClientType.COMPANY);
+
+RESULT:
+ERROR: Incorrect password for company 'Apple'. Please try again.
+
+COMMAND: 
+cmpnyFcd = (CompanyFacade)cms.login("Apple", "jobs", ClientType.COMPANY);
+
+RESULT:
+Company [id=2, compName=Apple, password=jobs, email=apple@apple.com, coupons=[Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com], Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla], Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]]]
+
+Test of get methods:
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(-1);
+
+RESULT:
+ERROR: Invalid ID value: -1. Please enter a value greater than 0.
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(0);
+
+RESULT:
+ERROR: Invalid ID value: 0. Please enter a value greater than 0.
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(39);
+
+RESULT:
+ERROR: No matching row with the ID: 39 in table 'Company_Coupon_Table'.
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(4);
+
+RESULT:
+ERROR: The coupon with ID: 4 is not associated with company 'Apple'. Please select a relevant coupon.
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(7);
+
+RESULT:
+ERROR: No matching row with the ID: 7 in table 'Company_Coupon_Table'.
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(6);
+
+RESULT:
+Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]
+
+COMMAND: 
+coupons = cmpnyFcd.getAllCoupons();
+
+RESULT:
+Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]
+Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]
+Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByType(CouponType.CAMPING);
+
+RESULT:
+Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByType(CouponType.RESTAURANTS);
+
+RESULT:
+Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByMaxPrice(-80);
+
+RESULT:
+ERROR: Invalid maximum price value. Please enter a value greater then 0.
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByMaxPrice(0);
+
+RESULT:
+ERROR: Invalid maximum price value. Please enter a value greater then 0.
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByMaxPrice(249.99);
+
+RESULT:
+Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]
+Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]
+Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByMaxPrice(150);
+
+RESULT:
+Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]
+Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByMaxPrice(10);
+
+RESULT:
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByMinPrice(-45);
+
+RESULT:
+ERROR: Invalid minimum price value. Please enter a non-negative value.
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByMinPrice(0);
+
+RESULT:
+Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]
+Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]
+Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByMinPrice(150);
+
+RESULT:
+Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByMinPrice(1500);
+
+RESULT:
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByPriceRange(10, -1);
+
+RESULT:
+ERROR: Invalid price range values. Please enter a non-negative value for minimum price and a value greater than 0 for maximum price.
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByPriceRange(0, 0);
+
+RESULT:
+ERROR: Invalid maximum price value. Please enter a value greater then 0.
+
+COMMAND: 
+coupons = cmpnyFcd.getCouponsByPriceRange(150, 0);
+
+RESULT:
+Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]
+Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]
+
+COMMAND: 
+cpn = cmpnyFcd.getCouponByTitle("SuperPharm");
+
+RESULT:
+MSG: No coupon with the title 'SuperPharm' was found associated with the company 'Apple'.
+
+COMMAND: 
+cpn = cmpnyFcd.getCouponByTitle("Buy 1 get 1 free");
+
+RESULT:
+Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]
+
+COMMAND: 
+long date = new GregorianCalendar(2016, Calendar.JANUARY, 1).getTimeInMillis();
+coupons = cmpnyFcd.getCouponsByExpirationDate(new Date(date));
+
+RESULT:
+
+COMMAND: 
+date = new GregorianCalendar(2016, Calendar.AUGUST, 1).getTimeInMillis();
+coupons = cmpnyFcd.getCouponsByExpirationDate(new Date(date));
+
+RESULT:
+Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]
+Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]
+
+COMMAND: 
+long date = new GregorianCalendar(2017, Calendar.JUNE, 21).getTimeInMillis();
+coupons = cmpnyFcd.getCouponsByExpirationDate(new Date(date));
+
+RESULT:
+Coupon [id=11, title=Rent a car, startDate=2015-07-01, endDate=2016-07-01, amount=91, type=SPORTS, message=Bring a friend, price=50.0, image=blavbla]
+Coupon [id=6, title=Free, startDate=2015-10-01, endDate=2016-10-01, amount=16, type=RESTAURANTS, message=Thank you for buying, price=200.0, image=http//:facebook.com]
+Coupon [id=9, title=Buy 1 get 1 free, startDate=2015-03-01, endDate=2016-03-01, amount=0, type=CAMPING, message=Come all, price=100.0, image=picture]
+
+Test of updateCoupon methods:
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(6);
+cpn.setId(30);
+cpn.setTitle("Buy 1 get 1 free");
+cmpnyFcd.updateCoupon(cpn);
+
+RESULT:
+ERROR: The coupon title 'Buy 1 get 1 free' already exists for another coupon in the database. Please enter a coupon with a different title.
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(6);
+cpn.setId(30);
+cpn.setTitle("Everything must go!");
+long date = new GregorianCalendar(2017, Calendar.JUNE, 21).getTimeInMillis();
+cpn.setStartDate(new Date(date));
+date = new GregorianCalendar(2016, Calendar.JUNE, 21).getTimeInMillis();
+cpn.setEndDate(new Date(date));
+cmpnyFcd.updateCoupon(cpn);
+
+RESULT:
+ERROR: Invalid expiration date range: 2017-06-21 until 2016-06-21. Please enter start date to be before end date.
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(6);
+cpn.setId(30);
+cpn.setTitle("Everything must go!");
+date = new GregorianCalendar(2016, Calendar.JUNE, 21).getTimeInMillis();
+cpn.setStartDate(new Date(date));
+date = new GregorianCalendar(2017, Calendar.JUNE, 21).getTimeInMillis();
+cpn.setEndDate(new Date(date));
+cpn.setAmount(-20);
+cmpnyFcd.updateCoupon(cpn);
+
+RESULT:
+ERROR: Invalid coupon amount value: -20. Please enter a non negative amount value.
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(6);
+cpn.setId(30);
+cpn.setTitle("Everything must go!");
+date = new GregorianCalendar(2016, Calendar.JUNE, 21).getTimeInMillis();
+cpn.setStartDate(new Date(date));
+date = new GregorianCalendar(2017, Calendar.JUNE, 21).getTimeInMillis();
+cpn.setEndDate(new Date(date));
+cpn.setAmount(20);
+cpn.setType(CouponType.FOOD);
+cpn.setMessage("Open all week");
+cpn.setPrice(0L);
+cmpnyFcd.updateCoupon(cpn);
+
+RESULT:
+ERROR: Invalid coupon price: 0.0. Please enter price value greater than 0.
+
+COMMAND: 
+cpn = cmpnyFcd.getCoupon(6);
+cpn.setId(30);
+cpn.setTitle("Everything must go!");
+date = new GregorianCalendar(2016, Calendar.JUNE, 21).getTimeInMillis();
+cpn.setStartDate(new Date(date));
+date = new GregorianCalendar(2017, Calendar.JUNE, 21).getTimeInMillis();
+cpn.setEndDate(new Date(date));
+cpn.setAmount(20);
+cpn.setType(CouponType.FOOD);
+cpn.setMessage("Open all week");
+cpn.setPrice(50L);
+cpn.setImage("photo");
+cmpnyFcd.updateCoupon(cpn);
+
+RESULT:
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |94                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Everything must go!|2016-06-21         |2017-06-21         |20                 |FOOD               |Open all week      |50.0               |photo              |
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|9                  |Buy 1 get 1 free   |2015-03-01         |2016-03-01         |0                  |CAMPING            |Come all           |100.0              |picture            |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Test of method removeCoupon:
+
+COMMAND: 
+cmpnyFcd.removeCoupon(cmpnyFcd.getCoupon(1));
+
+RESULT:
+ERROR: The coupon with ID: 1 is not associated with company 'Apple'. Please select a relevant coupon.
+
+COMMAND: 
+cmpnyFcd.removeCoupon(cmpnyFcd.getCoupon(9));
+
+RESULT:
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |94                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Everything must go!|2016-06-21         |2017-06-21         |20                 |FOOD               |Open all week      |50.0               |photo              |
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Company_Coupon_Table':
+-----------------------------------------Company_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Company_ID         |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|2                  |6                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|3                  |8                  |
+|4                  |1                  |
+|4                  |4                  |
+|4                  |12                 |
+-----------------------------------------END OF Company_Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Customer_Coupon_Table':
+-----------------------------------------Customer_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Customer_ID        |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |12                 |
+|2                  |1                  |
+|2                  |3                  |
+|2                  |4                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|5                  |4                  |
+|5                  |8                  |
+|5                  |11                 |
+|5                  |12                 |
+|6                  |3                  |
+|6                  |11                 |
+|7                  |8                  |
+|7                  |11                 |
+|7                  |12                 |
+|8                  |1                  |
+|8                  |5                  |
+|9                  |1                  |
+|9                  |4                  |
+|10                 |1                  |
+|10                 |5                  |
+|10                 |6                  |
+|11                 |1                  |
+|11                 |5                  |
+|11                 |11                 |
+|12                 |1                  |
+|12                 |11                 |
+|12                 |12                 |
+|13                 |1                  |
+|13                 |4                  |
+|13                 |5                  |
+|13                 |8                  |
+|14                 |1                  |
+|14                 |6                  |
+|14                 |12                 |
+|15                 |1                  |
+|15                 |5                  |
+|15                 |6                  |
+|15                 |12                 |
+|16                 |4                  |
+|16                 |8                  |
+|16                 |11                 |
+|17                 |1                  |
+|18                 |5                  |
+|18                 |6                  |
+|18                 |8                  |
+|19                 |4                  |
+|19                 |5                  |
+|19                 |11                 |
+|20                 |5                  |
+|20                 |11                 |
+|20                 |12                 |
+-----------------------------------------END OF Customer_Coupon_Table----------------------------------------------
+
+Test of method createCoupon:
+
+COMMAND: 
+cpn = null;
+cmpnyFcd.createCoupon(cpn);
+
+RESULT:
+ERROR: Invalid coupon.
+
+COMMAND: 
+cpn.setId(30);
+cpn.setTitle("Sale");
+cmpnyFcd.createCoupon(cpn);
+
+RESULT:
+ERROR: The coupon title 'Sale' already exists for another coupon in the database. Please enter a coupon with a different title.
+
+COMMAND: 
+cpn.setId(30);
+cpn.setTitle("Dinner for 2");
+date = new GregorianCalendar(2016, Calendar.NOVEMBER, 26).getTimeInMillis();
+cpn.setStartDate(new Date(date));
+date = new GregorianCalendar(2015, Calendar.NOVEMBER, 26).getTimeInMillis();
+cpn.setEndDate(new Date(date));
+cmpnyFcd.createCoupon(cpn);
+
+RESULT:
+ERROR: Invalid expiration date range: 2016-11-26 until 2015-11-26. Please enter start date to be before end date.
+
+COMMAND: 
+cpn.setId(30);
+cpn.setTitle("Dinner for 2");
+date = new GregorianCalendar(2015, Calendar.NOVEMBER, 26).getTimeInMillis();
+cpn.setStartDate(new Date(date));
+date = new GregorianCalendar(2016, Calendar.NOVEMBER, 26).getTimeInMillis();
+cpn.setEndDate(new Date(date));
+cpn.setPrice(0);
+cmpnyFcd.createCoupon(cpn);
+
+RESULT:
+ERROR: Invalid coupon price: 0.0. Please enter price value greater than 0.
+
+COMMAND: 
+cpn.setId(30);
+cpn.setTitle("Dinner for 2");
+date = new GregorianCalendar(2015, Calendar.NOVEMBER, 26).getTimeInMillis();
+cpn.setStartDate(new Date(date));
+date = new GregorianCalendar(2016, Calendar.NOVEMBER, 26).getTimeInMillis();
+cpn.setEndDate(new Date(date));
+cpn.setPrice(50D);
+cpn.setAmount(0);
+cmpnyFcd.createCoupon(cpn);
+
+RESULT:
+ERROR: Invalid coupon amount: 0. Please enter amount value greater than 0.
+
+COMMAND: 
+cpn.setId(30);
+cpn.setTitle("Dinner for 2");
+date = new GregorianCalendar(2015, Calendar.NOVEMBER, 26).getTimeInMillis();
+cpn.setStartDate(new Date(date));
+date = new GregorianCalendar(2016, Calendar.NOVEMBER, 26).getTimeInMillis();
+cpn.setEndDate(new Date(date));
+cpn.setPrice(50D);
+cpn.setAmount(100);
+cpn.setType(CouponType.FOOD);
+cpn.setMessage("Hello");
+cpn.setImage("photo.jpg");
+cmpnyFcd.createCoupon(cpn);
+
+RESULT:
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |94                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Everything must go!|2016-06-21         |2017-06-21         |20                 |FOOD               |Open all week      |50.0               |photo              |
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|9                  |Dinner for 2       |2015-11-26         |2016-11-26         |100                |FOOD               |Hello              |50.0               |photo.jpg          |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Company_Coupon_Table':
+-----------------------------------------Company_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Company_ID         |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|2                  |6                  |
+|2                  |9                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|3                  |8                  |
+|4                  |1                  |
+|4                  |4                  |
+|4                  |12                 |
+-----------------------------------------END OF Company_Coupon_Table----------------------------------------------
+
+********************
+CustomerFacade test:
+********************
+
+Test of login method:
+
+Shwoing the content of 'Customer_Table':
+-----------------------------------------Customer_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|ID                 |Customer_Name      |Password           |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |Yossi              |vdfas              |
+|2                  |Eli                |45tgw              |
+|3                  |Avi                |1234               |
+|5                  |Beny               |abcd               |
+|6                  |Yoav               |vbgtj              |
+|7                  |David              |sdfraj             |
+|8                  |Asi                |feauh              |
+|9                  |Tal                |83fhv              |
+|10                 |Itik               |askdv              |
+|11                 |Yaniv              |nvfjdw             |
+|12                 |Ami                |freerf             |
+|13                 |Eldad              |efaaa              |
+|14                 |Baruch             |3fj2               |
+|15                 |Zion               |4gf43q             |
+|16                 |Dan                |cvdsf              |
+|17                 |Hagar              |39vje              |
+|18                 |Hila               |3aouv              |
+|19                 |Yaron              |3fahha             |
+|20                 |Meital             |3aw3ha             |
+|21                 |Udi                |4234gfr            |
+-----------------------------------------END OF Customer_Table----------------------------------------------
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |94                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Everything must go!|2016-06-21         |2017-06-21         |20                 |FOOD               |Open all week      |50.0               |photo              |
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|9                  |Dinner for 2       |2015-11-26         |2016-11-26         |100                |FOOD               |Hello              |50.0               |photo.jpg          |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Customer_Coupon_Table':
+-----------------------------------------Customer_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Customer_ID        |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |12                 |
+|2                  |1                  |
+|2                  |3                  |
+|2                  |4                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|5                  |4                  |
+|5                  |8                  |
+|5                  |11                 |
+|5                  |12                 |
+|6                  |3                  |
+|6                  |11                 |
+|7                  |8                  |
+|7                  |11                 |
+|7                  |12                 |
+|8                  |1                  |
+|8                  |5                  |
+|9                  |1                  |
+|9                  |4                  |
+|10                 |1                  |
+|10                 |5                  |
+|10                 |6                  |
+|11                 |1                  |
+|11                 |5                  |
+|11                 |11                 |
+|12                 |1                  |
+|12                 |11                 |
+|12                 |12                 |
+|13                 |1                  |
+|13                 |4                  |
+|13                 |5                  |
+|13                 |8                  |
+|14                 |1                  |
+|14                 |6                  |
+|14                 |12                 |
+|15                 |1                  |
+|15                 |5                  |
+|15                 |6                  |
+|15                 |12                 |
+|16                 |4                  |
+|16                 |8                  |
+|16                 |11                 |
+|17                 |1                  |
+|18                 |5                  |
+|18                 |6                  |
+|18                 |8                  |
+|19                 |4                  |
+|19                 |5                  |
+|19                 |11                 |
+|20                 |5                  |
+|20                 |11                 |
+|20                 |12                 |
+-----------------------------------------END OF Customer_Coupon_Table----------------------------------------------
+
+COMMAND: 
+cstmrFcd = (CompanyFacade)cms.login("Haim", "1111", ClientType.CUSTOMER);
+
+RESULT:
+ERROR: No matching customers with the name 'Haim' was found in table 'Customer_Table'.
+
+COMMAND: 
+cstmrFcd = (CompanyFacade)cms.login("Avi", "1111", ClientType.CUSTOMER);
+
+RESULT:
+ERROR: Incorrect password for customer 'Avi'. Please try again.
+
+COMMAND: 
+cstmrFcd = (CompanyFacade)cms.login("Avi", "1234", ClientType.CUSTOMER);
+
+RESULT:
+Customer [id=3, custName=Avi, password=1234, coupons=[Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo], Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]]]
+
+Test of get methods:
+
+COMMAND: 
+System.out.println(cstmrFcd.getThisCustomer().toString());
+
+RESULT:
+Customer [id=3, custName=Avi, password=1234, coupons=[Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo], Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]]]
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCoupons();
+
+RESULT:
+Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]
+Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByType(CouponType.HEALTH);
+
+RESULT:
+Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByType(CouponType.ELECTRICITY);
+
+RESULT:
+MSG: Customer 'Avi' does not own any coupons of the type 'ELECTRICITY'.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByMaxPrice(-100);
+
+RESULT:
+ERROR: Invalid maximum price value: -100.0. Please enter a value greater then 0.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByMaxPrice(0);
+
+RESULT:
+ERROR: Invalid maximum price value: 0.0. Please enter a value greater then 0.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByMaxPrice(20);
+
+RESULT:
+MSG: Customer 'Avi' does not own any coupons with price below 20.0.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByMaxPrice(100);
+
+RESULT:
+Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByMaxPrice(300);
+
+RESULT:
+Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]
+Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByMinPrice(-1);
+
+RESULT:
+ERROR: Invalid minimum price value: -1.0 . Please enter a non-negative value.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByMinPrice(1000);
+
+RESULT:
+MSG: Customer 'Avi' does not own any coupons with price above 1000.0.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByMinPrice(100);
+
+RESULT:
+Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByMinPrice(0);
+
+RESULT:
+Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]
+Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByPriceRange(-10, -100);
+
+RESULT:
+ERROR: Invalid price range values. Please enter a non-negative value for minimum price and a value greater than 0 for maximum price.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByPriceRange(0, 0);
+
+RESULT:
+ERROR: Invalid maximum price value: 0.0. Please enter a value greater then 0.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByPriceRange(0, 10);
+
+RESULT:
+MSG: Customer 'Avi' does not own any coupons with prices within range of: 0.0-10.0.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByPriceRange(2000, 1000);
+
+RESULT:
+MSG: Customer 'Avi' does not own any coupons with prices within range of: 1000.0-2000.0.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByPriceRange(100, 50);
+
+RESULT:
+Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByPriceRange(0, 1000);
+
+RESULT:
+Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]
+Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]
+
+COMMAND: 
+cpn = cstmrFcd.getPurchasedCouponByTitle("");
+
+RESULT:
+ERROR: Invalid coupon title. Please try again.
+
+COMMAND: 
+cpn = cstmrFcd.getPurchasedCouponByTitle(null);
+
+RESULT:
+ERROR: Invalid coupon title. Please try again.
+
+COMMAND: 
+cpn = cstmrFcd.getPurchasedCouponByTitle("blabla");
+
+RESULT:
+MSG: No coupon with title 'blabla' is listed in table 'Coupon_Table'.
+
+COMMAND: 
+cpn = cstmrFcd.getPurchasedCouponByTitle("DutyFree");
+
+RESULT:
+Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]
+
+COMMAND: 
+cpn = cstmrFcd.getPurchasedCouponByTitle("SuperPharm");
+
+RESULT:
+MSG: Customer 'Avi' does not own a coupons with the title 'SuperPharm'.
+
+COMMAND: 
+coupons = cstmrFcd.getAllPurchasedCouponsByExpirationDate(null);
+
+RESULT:
+ERROR: Invalid coupon expiration date. Please try again.
+
+COMMAND: 
+date = new GregorianCalendar(2014, Calendar.JUNE, 21).getTimeInMillis();
+coupons = cstmrFcd.getAllPurchasedCouponsByExpirationDate(new Date(date));
+
+RESULT:
+MSG: Customer 'Avi' does not own any coupons that expire before 2014-06-21'.
+
+COMMAND: 
+date = new GregorianCalendar(2020, Calendar.JUNE, 21).getTimeInMillis();
+coupons = cstmrFcd.getAllPurchasedCouponsByExpirationDate(new Date(date));
+
+RESULT:
+Coupon [id=3, title=DutyFree, startDate=2015-12-01, endDate=2016-12-01, amount=0, type=FOOD, message=Like us on facebook, price=50.0, image=Photo]
+Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]
+
+COMMAND: 
+date = new GregorianCalendar(2016, Calendar.NOVEMBER, 26).getTimeInMillis();
+coupons = cstmrFcd.getAllPurchasedCouponsByExpirationDate(new Date(date));
+
+RESULT:
+Coupon [id=5, title=Sale, startDate=2015-11-01, endDate=2016-11-01, amount=41, type=HEALTH, message=Dont miss!, price=250.0, image=tmona]
+
+Test of purchaseCoupon method:
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |94                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Everything must go!|2016-06-21         |2017-06-21         |20                 |FOOD               |Open all week      |50.0               |photo              |
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|9                  |Dinner for 2       |2015-11-26         |2016-11-26         |100                |FOOD               |Hello              |50.0               |photo.jpg          |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Customer_Coupon_Table':
+-----------------------------------------Customer_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Customer_ID        |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |12                 |
+|2                  |1                  |
+|2                  |3                  |
+|2                  |4                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |5                  |
+|5                  |4                  |
+|5                  |8                  |
+|5                  |11                 |
+|5                  |12                 |
+|6                  |3                  |
+|6                  |11                 |
+|7                  |8                  |
+|7                  |11                 |
+|7                  |12                 |
+|8                  |1                  |
+|8                  |5                  |
+|9                  |1                  |
+|9                  |4                  |
+|10                 |1                  |
+|10                 |5                  |
+|10                 |6                  |
+|11                 |1                  |
+|11                 |5                  |
+|11                 |11                 |
+|12                 |1                  |
+|12                 |11                 |
+|12                 |12                 |
+|13                 |1                  |
+|13                 |4                  |
+|13                 |5                  |
+|13                 |8                  |
+|14                 |1                  |
+|14                 |6                  |
+|14                 |12                 |
+|15                 |1                  |
+|15                 |5                  |
+|15                 |6                  |
+|15                 |12                 |
+|16                 |4                  |
+|16                 |8                  |
+|16                 |11                 |
+|17                 |1                  |
+|18                 |5                  |
+|18                 |6                  |
+|18                 |8                  |
+|19                 |4                  |
+|19                 |5                  |
+|19                 |11                 |
+|20                 |5                  |
+|20                 |11                 |
+|20                 |12                 |
+-----------------------------------------END OF Customer_Coupon_Table----------------------------------------------
+
+COMMAND: 
+cpn = null;
+cstmrFcd.purchaseCoupon(cpn);
+
+RESULT:
+ERROR: Invalid coupon.
+
+COMMAND: 
+cpn = new Coupon();
+cstmrFcd.purchaseCoupon(cpn);
+
+RESULT:
+ERROR: The coupon you are attempting to purchase is not listed in the data base. Please try to purchase another coupon.
+
+COMMAND: 
+cpn = cpnDbDao.getCoupon(2);
+cstmrFcd.purchaseCoupon(cpn);
+
+RESULT:
+ERROR: No matching row with the ID: 2 in table 'Coupon_Table'.
+
+COMMAND: 
+cpn = cpnDbDao.getCoupon(3);
+cstmrFcd.purchaseCoupon(cpn);
+
+RESULT:
+Sorry, this coupon is out of stock. Please buy another coupon.
+
+COMMAND: 
+cpn = cpnDbDao.getCoupon(5);
+cstmrFcd.purchaseCoupon(cpn);
+
+RESULT:
+ERROR: You have already purchased this coupon. Please buy another coupon.
+
+COMMAND: 
+cpn = cpnDbDao.getCoupon(4);
+cstmrFcd.purchaseCoupon(cpn);
+
+RESULT:
+
+Shwoing the content of table 'Coupon_Table'.
+-----------------------------------------Coupon_Table----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID                 |Title              |Start_Date         |End_Date           |Amount             |Type               |Message            |Price              |Image              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1                  |Groupon            |2015-10-21         |2016-10-21         |9                  |ELECTRICITY        |All half price!    |200.0              |http//:facebook.com|
+|3                  |DutyFree           |2015-12-01         |2016-12-01         |0                  |FOOD               |Like us on facebook|50.0               |Photo              |
+|4                  |SuperPharm         |2015-10-10         |2016-10-10         |93                 |SPORTS             |Hello              |100.0              |picture            |
+|5                  |Sale               |2015-11-01         |2016-11-01         |41                 |HEALTH             |Dont miss!         |250.0              |tmona              |
+|6                  |Everything must go!|2016-06-21         |2017-06-21         |20                 |FOOD               |Open all week      |50.0               |photo              |
+|8                  |2 for 1            |2015-10-01         |2016-10-01         |24                 |ELECTRICITY        |Visit our website  |50.0               |Photo              |
+|9                  |Dinner for 2       |2015-11-26         |2016-11-26         |100                |FOOD               |Hello              |50.0               |photo.jpg          |
+|11                 |Rent a car         |2015-07-01         |2016-07-01         |91                 |SPORTS             |Bring a friend     |50.0               |blavbla            |
+|12                 |Free entrance      |2015-01-01         |2016-01-01         |193                |HEALTH             |Free parking       |120.0              |snapshot           |
+-----------------------------------------END OF Coupon_Table----------------------------------------------
+
+Shwoing the content of 'Customer_Coupon_Table':
+-----------------------------------------Customer_Coupon_Table----------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+|Customer_ID        |Coupon_ID          |
+-----------------------------------------------------------------------------------------------------------------
+|1                  |12                 |
+|2                  |1                  |
+|2                  |3                  |
+|2                  |4                  |
+|2                  |11                 |
+|3                  |3                  |
+|3                  |4                  |
+|3                  |5                  |
+|5                  |4                  |
+|5                  |8                  |
+|5                  |11                 |
+|5                  |12                 |
+|6                  |3                  |
+|6                  |11                 |
+|7                  |8                  |
+|7                  |11                 |
+|7                  |12                 |
+|8                  |1                  |
+|8                  |5                  |
+|9                  |1                  |
+|9                  |4                  |
+|10                 |1                  |
+|10                 |5                  |
+|10                 |6                  |
+|11                 |1                  |
+|11                 |5                  |
+|11                 |11                 |
+|12                 |1                  |
+|12                 |11                 |
+|12                 |12                 |
+|13                 |1                  |
+|13                 |4                  |
+|13                 |5                  |
+|13                 |8                  |
+|14                 |1                  |
+|14                 |6                  |
+|14                 |12                 |
+|15                 |1                  |
+|15                 |5                  |
+|15                 |6                  |
+|15                 |12                 |
+|16                 |4                  |
+|16                 |8                  |
+|16                 |11                 |
+|17                 |1                  |
+|18                 |5                  |
+|18                 |6                  |
+|18                 |8                  |
+|19                 |4                  |
+|19                 |5                  |
+|19                 |11                 |
+|20                 |5                  |
+|20                 |11                 |
+|20                 |12                 |
+-----------------------------------------END OF Customer_Coupon_Table----------------------------------------------
+
+
+*****************
+END OF TEST
+*****************

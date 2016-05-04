@@ -1,0 +1,14 @@
+Tue May 03 17:24:46 IDT 2016 : Apache Derby Network Server - 10.11.1.1 - (1616546) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Tue May 03 17:25:17 IDT 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-0154-7701-ad43-000003890851 
+on database directory C:\Users\Yoav\workspace\Coupon_Management_System\db-derby-10.11.1.1-bin\bin\cmsdb with class loader sun.misc.Launcher$AppClassLoader@10455d6 
+Loaded from file:/C:/Users/Yoav/workspace/Coupon_Management_System/db-derby-10.11.1.1-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_91-b14
+user.dir=C:\Users\Yoav\workspace\Coupon_Management_System\db-derby-10.11.1.1-bin\bin
+os.name=Windows 7
+os.arch=x86
+os.version=6.1
+derby.system.home=C:\Users\Yoav\workspace\Coupon_Management_System\db-derby-10.11.1.1-bin\bin
+Database Class Loader started - derby.database.classpath=''
