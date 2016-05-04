@@ -12,11 +12,11 @@ import cms.facade.CustomerFacade;
 import cms.utility.ConnectionPool;
 
 
-public class CouponManagmentSystem {
+public class CouponManagementSystem {
 	//******************************************************************
 	//ATTRIBUTES
 	
-	private static CouponManagmentSystem instance = null;
+	private static CouponManagementSystem instance = null;
 	DailyCouponExpirationTask dlycCpnXprTsk = new DailyCouponExpirationTask();
 	Thread dcxtThread = new Thread(dlycCpnXprTsk, "dcxtThread");
 	ConnectionPool cnctnPl =  ConnectionPool.getInstance();
@@ -30,16 +30,16 @@ public class CouponManagmentSystem {
 	//******************************************************************
 	//CTOR
 	
-	private CouponManagmentSystem() throws CouponSystemException {
+	private CouponManagementSystem() throws CouponSystemException {
 		super();
 //		dcxtThread.start();
 	}
 	
 	//------------------------------------------------------------------
 	
-	public static CouponManagmentSystem getInstance() throws CouponSystemException {
+	public static CouponManagementSystem getInstance() throws CouponSystemException {
 		if (instance == null) {
-			instance = new CouponManagmentSystem() ;
+			instance = new CouponManagementSystem() ;
 		}
 		
 		return instance;

@@ -19,7 +19,7 @@ import cms.dbdao.CustomerDBDAO;
 import cms.facade.AdminFacade;
 import cms.facade.CompanyFacade;
 import cms.facade.CustomerFacade;
-import cms.main.CouponManagmentSystem;
+import cms.main.CouponManagementSystem;
 import cms.main.CouponSystemException;
 
 
@@ -29,7 +29,7 @@ public class MainTest {
 		//Main test initialisation:
 		System.out.println(new java.util.Date());
 		
-		CouponManagmentSystem cms = CouponManagmentSystem.getInstance();
+		CouponManagementSystem cms = CouponManagementSystem.getInstance();
 		
 		AdminFacade admnFcd = new AdminFacade();
 		CompanyFacade cmpnyFcd = new CompanyFacade();
