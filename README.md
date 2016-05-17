@@ -25,9 +25,11 @@ Under the package ‘test’ you will find the class ‘MainTest.java’. This t
 populator. The test is hardcoded and was tailored specifically for the resulting database from the populaor. So for
 best and most comprehensive test results, make sure to invoke the SQLPopulator before each test run, so it would
 repopulate the database with the proper values.
+
 Note: In the test class, there is an instantiation of the DBDAO classes rather than the DAO classes. This is due to
 the reason that the DBDAO classes contain some utility methods for creating, showing and dropping the SQL tables
 of each DBDAO. These methods are not part of the CMS functionality, thus they do not appear in the DAO’s.
+
 How to review the test results: on the console, you should see the command that is being executed each time
 under the text ‘COMMAND’, followed by the result of that command, under the text RESULT. For some command,
 relevant tables will be printed out to the console for more thorough examination of the results (commands such as
